@@ -1,0 +1,51 @@
+Desarrollar una red social enfocada en ser un espacio de apoyo y 
+comunicación para chicas de escasos recursos llamado TechGirls. 
+La red debe permitir el acceso a foros y la publicación de información 
+relacionada con temas académicos y tecnológicos. (Podrán acceder desde 
+una chromebook proporcionada por el gobierno del Estado con internet ilimitado)
+
+
+Especificaciones del Proyecto:
+
+
+Tecnología: Utilizar Vue 3 para el desarrollo del frontend. Se puede optar por usar Bootstrap Vue 
+o Vuetify para el diseño de la interfaz.
+
+Maquetación con Información Dummy: No se requiere conexión a una base de datos; en lugar de ello, 
+se utilizará información dummy para simular el funcionamiento de la red.
+
+Equipos de Trabajo: El proyecto se realizará en los mismos equipos 
+formados durante las exposiciones de la materia.
+
+Funcionalidades y Pantallas:
+
+
+Pantalla Home: Mostrará comentarios, publicaciones, temas de actualidad en 
+tecnología, noticias del gobierno del estado, etc. Permitirá a los usuarios comentar y responder a otros comentarios.
+
+Pantalla de Publicación de Contenido: Incorporará un rich text editor 
+para facilitar la creación de publicaciones detalladas.
+
+Pantalla de Perfil: Permitirá la visualización 
+y edición del perfil de usuario.
+
+Pantalla de Chat: Habilitará un cuadro de chat 
+para comunicarse con otros miembros de la red.
+
+Pantalla de Búsqueda: Facilitará la búsqueda 
+de usuarios y contenido dentro de la red.
+
+Pantalla de Amigos/Seguidores: Mostrará una 
+lista de amigos y seguidores de cada usuario.
+
+Pantalla de Configuración y Privacidad: Permitirá a los usuarios 
+gestionar la configuración de su cuenta y sus preferencias de privacidad.
+
+
+Presentación y Entrega:
+
+
+Repositorio: Se debe anexar la liga del repositorio donde se encuentra el proyecto.
+
+Demostración en Clase: Presentar el proyecto en clase durante la semana del 
+27 de noviembre, mostrando las funcionalidades y el diseño de la interfaz.
