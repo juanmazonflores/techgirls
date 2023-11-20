@@ -7,7 +7,6 @@ una chromebook proporcionada por el gobierno del Estado con internet ilimitado)
 
 Especificaciones del Proyecto:
 
-
 Tecnología: Utilizar Vue 3 para el desarrollo del frontend. Se puede optar por usar Bootstrap Vue 
 o Vuetify para el diseño de la interfaz.
 
@@ -17,8 +16,8 @@ se utilizará información dummy para simular el funcionamiento de la red.
 Equipos de Trabajo: El proyecto se realizará en los mismos equipos 
 formados durante las exposiciones de la materia.
 
-Funcionalidades y Pantallas:
 
+Funcionalidades y Pantallas:
 
 Pantalla Home: Mostrará comentarios, publicaciones, temas de actualidad en 
 tecnología, noticias del gobierno del estado, etc. Permitirá a los usuarios comentar y responder a otros comentarios.
@@ -43,7 +42,6 @@ gestionar la configuración de su cuenta y sus preferencias de privacidad.
 
 
 Presentación y Entrega:
-
 
 Repositorio: Se debe anexar la liga del repositorio donde se encuentra el proyecto.
 
