@@ -13,7 +13,7 @@
                 </h4>
             </div>
             
-            <p class=" d-flex text ">Hola Teresa, mi nombres es Aurora</p>
+            <p class=" d-flex text ">{{comment.text}}</p>
 
             <div class=" d-flex align-items-center gap-2 px-0">
                 <small class="text-muted card-header-subTitle">Hace 2 horas</small>
@@ -62,12 +62,16 @@ const Mostrar = () => {
 
 <style scoped>
 
+    .list-groupt{
+        background-color: #FF8F8F;
+    }
+
     input{
-        border-color: #CE5A67;
+        border-color: var(--color-font);
     }
 
     h4{
-		color: #CE5A67;
+		color: var(--color-font);
 		text-decoration:none;
 	}
 	h4:hover{
@@ -76,7 +80,7 @@ const Mostrar = () => {
 	}
 
 	.btn:hover {
-		color: #5044c9;
+		color: var(--color-font);
 	}
     .card-header {
 		background-color: transparent;

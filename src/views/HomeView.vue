@@ -1,9 +1,8 @@
 <template>
-	<div class="posts container">
-		<img alt="mazebook" src="../assets/img/wordmark.svg" class="logo" />
+	<div class="posts">
 		<CardComp
 			class="mt-2 mx-auto single-spot"
-			picture="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+			picture="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 			parrafo="Hola esta es mi primera publicacion"
 			:header="{
 				name: 'Teresa Chavez',
@@ -12,12 +11,14 @@
 			
 			:likes="true" 
 			:comment="{
-				name: 'Teresa Chavez',
-				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				name: 'Aurora Alcazar',
+				picture: 'https://randomuser.me/api/portraits/women/85.jpg',
+				text:'Hola Teresa, mi nombre es Aurora'
 			}"
 			:answer="{
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				text:'Hola, te dare follow'
 			}"/>
 			
 		<CardComp
@@ -30,12 +31,14 @@
 			}"
 			:likes="true" 
 			:comment="{
-				name: 'Teresa Chavez',
-				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				name: 'Aida Magana',
+				picture: 'https://randomuser.me/api/portraits/women/80.jpg',
+				text:'Excelente'
 			}"
 			:answer="{
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				text:'Opino lo mismo'
 			}"
 			
 			/>
@@ -49,12 +52,14 @@
 			}"
 			:likes="true" 
 			:comment="{
-				name: 'Teresa Chavez',
-				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				name: 'Aurora Alcazar',
+				picture: 'https://randomuser.me/api/portraits/women/85.jpg',
+				text:'Espero que funcione este plan'
 			}"
 			:answer="{
-				name: 'Teresa Chavez',
-				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				name: 'Aida Magana',
+				picture: 'https://randomuser.me/api/portraits/women/80.jpg',
+				text:'x2'
 			}"/>
 	</div>
 </template>

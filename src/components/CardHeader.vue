@@ -40,7 +40,7 @@
 		margin-top: 10px;
 	}
 	h4{
-		color: #CE5A67;
+		color: var(--color-font);
 		text-decoration:none;
 	}
 	h4:hover{

@@ -19,16 +19,15 @@ export default {
 </script>
 
 <style>
+ @import url('../public/styles.css');
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-#app {
+	#app {
+		font-family: var(--font-family);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
 		color: #860A35;
-		background-color: #F4DFC8;
+		background-size: cover;
 	}
 	.fadeUp-enter-active,
 	.fadeUp-leave-active {

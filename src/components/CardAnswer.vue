@@ -13,7 +13,7 @@
                 </h4>
             </div>
             
-            <p class=" d-flex text ">Hola Teresa, mi nombres es Aurora</p>
+            <p class=" d-flex text ">{{answer.text}}</p>
 
             <div class=" d-flex align-items-center gap-2 px-0">
                 <small class="text-muted card-header-subTitle">Hace dos minutos</small>
@@ -41,8 +41,8 @@
 
 <style scoped>
 
-h4{
-		color: #CE5A67;
+	h4{
+		color: var(--color-font);
 		text-decoration:none;
 	}
 	h4:hover{
@@ -88,6 +88,10 @@ h4{
         flex-direction:column;
 
     }
+
+	.btn:hover {
+		color: var(--color-font);
+	}
 
     .text{
         margin-bottom: 0;

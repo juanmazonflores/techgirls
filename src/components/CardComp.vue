@@ -47,6 +47,7 @@
 		border: none;
 		box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 		text-align: left;
+		background-color: var(--color-container);
 	}
 	.post-img {
 		max-width: 100%;
@@ -54,5 +55,9 @@
 	}
 	.btn-primary{
 		background-color: #860A35;
+	}
+
+	.btn:hover {
+		color: var(--color-font);
 	}
 </style>

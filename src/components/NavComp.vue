@@ -1,6 +1,19 @@
 <template>
-	<nav class="navbar navbar-expand-lg bg-primeary">
+	
+	<nav class="navbar d-flex">
 		<div class="container justify-content-evenly">
+			<img alt="mazebook" src="../assets/img/techgirls2.png" class="logo" />
+			<div >
+				<form class="d-flex">
+					<input
+					type="text"
+					class="form-control"
+					v-model="busqueda"
+					placeholder="Buscar Usuario" required/>{{ busqueda }}
+					<button v-on:click="Search" type="submit" class="search material-icons-round">search</button>
+				</form>
+				
+			</div>
 			<router-link
 				to="/"
 				class="nav-link"
@@ -9,18 +22,19 @@
 				<span class="material-icons-round"> home </span>
 			</router-link>
 
+
 			<router-link
-				to="/about"
+				to="/profile"
 				class="nav-link"
-				:class="{ active: activePath.about }">
-				<span class="material-icons-round"> info </span>
+				:class="{ active: activePath.profile }">
+				<span class="material-icons-round"> face </span>
 			</router-link>
 
 			<router-link
 				to="/login"
 				class="nav-link"
-				:class="{ active: activePath.posts }">
-				<span class="material-icons-round"> featured_play_list </span>
+				:class="{ active: activePath.login }">
+				<span class="material-icons-round"> login </span>
 			</router-link>
 		</div>
 	</nav>
@@ -33,6 +47,9 @@
 			checkActive() {
 				console.log(this.$route.path)
 			},
+			Search(){
+				this.$router.push('/search')
+			}
 		},
 		created() {
 			this.checkActive()
@@ -42,26 +59,27 @@
 				if (this.$route.path === '/') {
 					return {
 						home: true,
-						about: false,
-						posts: false,
+						profile: false,
+						login: false
 					}
-				} else if (this.$route.path === '/about') {
+				} else if (this.$route.path === '/profile') {
 					return {
 						home: false,
-						about: true,
-						posts: false,
+						profile: true,
+						login: false
 					}
-				} else if (this.$route.path === '/posts') {
+				}  else if (this.$route.path === '/login') {
 					return {
 						home: false,
-						about: false,
-						posts: true,
+						profile: false,
+						login: true
 					}
-				} else {
+				}
+				else {
 					return {
 						home: false,
-						about: false,
-						posts: false,
+						profile: false,
+						login: false
 					}
 				}
 			},
@@ -71,13 +89,16 @@
 
 <style scoped>
 	.navbar{
-		background-color: #860A35;
+		background-color: var(--color-nav);
 		z-index: 1;
 	}
 
+	.logo{
+		height: 50px;
+	}
 
 	.material-icons-round {
-		color: rgb(248, 244, 244);
+		color: var(--color-font);
 		font-size: 1.4em;
 		background-color: rgba(218, 218, 218, 0.158);
 		padding: 0.3em;
@@ -88,5 +109,13 @@
 		color: white;
 		background-color: rgba(133, 128, 128, 0.158);
 		border: 1px solid rgba(248, 244, 244, 0.342);
+	}
+
+	input,button{
+		max-height: 50px;
+		align-items: center;
+	}
+	.search:hover{
+		color: white;
 	}
 </style>

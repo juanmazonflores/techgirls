@@ -28,6 +28,6 @@
 
 <style scoped>
 	.btn:hover {
-		color: #5044c9;
+		color: var(--color-font);
 	}
 </style>
