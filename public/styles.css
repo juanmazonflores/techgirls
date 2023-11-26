@@ -20,4 +20,11 @@ body {
     font-weight: 400;
     background: url("../src/assets/img/fondo.gif") no-repeat center center fixed;
     background-size: cover;
+    margin: 0;
+}
+
+.navbar{
+    background-color: var(--color-nav);
+    position: fixed;
+    z-index: 1;
 }

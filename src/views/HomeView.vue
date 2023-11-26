@@ -1,5 +1,11 @@
 <template>
 	<div class="posts">
+		
+		<div class="card2">
+        <h5>Crea un nuevo post</h5>
+        <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+      </div>
+	
 		<CardComp
 			class="mt-2 mx-auto single-spot"
 			picture="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -39,9 +45,7 @@
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
 				text:'Opino lo mismo'
-			}"
-			
-			/>
+			}"/>
 		<CardComp
 			class="mt-2 mx-auto single-spot"
 			picture="https://www.meganoticias.mx/uploads/noticias/sonora-presentan-plan-hidrico-para-los-proximos-30-anos-478409.jpeg"
@@ -65,11 +69,21 @@
 </template>
 <script>
 	import CardComp from '../components/CardComp.vue'
+	import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 	export default {
 		name: 'PostsView',
 		components: {
-			CardComp,
+			CardComp
 		},
+		data() {
+          return {
+              editor: ClassicEditor,
+              editorData: '<p></p>',
+              editorConfig: {
+                  // The configuration of the editor.
+              }
+          };
+      }
 	}
 </script>
 <style scoped>
@@ -84,5 +98,23 @@
 	.logo {
 		max-width: 115px;
 		padding: 0.2rem;
+		
+	}
+
+	h4,h5{
+		color: var(--color-font);
+		text-decoration:none;
+	}
+
+	.card2 {
+		border: none;
+		box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+		text-align: center;
+		background-color: var(--color-container);
+		margin: 2rem;
+		padding: 1rem;
+	}
+	.pad{
+		margin-top: 100px;
 	}
 </style>

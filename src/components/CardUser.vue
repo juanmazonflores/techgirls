@@ -9,12 +9,12 @@
 				<p>{{ bio }}</p>
 
 
-				<div class="container">
-					<div  class="pad">
+				<div class="container2">
+					<div  class="pad2">
 						<h5 class="">Seguidores {{ contador }}</h5>
 					</div>
                     
-					<div class="pad">
+					<div class="pad2">
 						<router-link
 							class="btn btn-sm btn-outline-secondary action-btn"
 							to="/friends">
@@ -22,12 +22,12 @@
 						</router-link>
 					</div>
 
-					<div v-if="!isCurrentUser()" class="pad">
+					<div v-if="!isCurrentUser()" class="pad2">
                         <span @click="increment"  v-if="!follow" class="btn btn-sm btn-outline-secondary action-btn material-icons-round"> person_add </span>
 						<span @click="decrement" v-else class="btn btn-sm btn-outline-secondary action-btn material-icons-round"> person_remove </span>
 					</div>
 
-					<div v-if="isCurrentUser()" class="pad">
+					<div v-if="isCurrentUser()" class="pad2">
 						<router-link
 							class="btn btn-sm btn-outline-secondary action-btn"
 							to="/settings">
@@ -35,7 +35,7 @@
 						</router-link>
 					</div>
 
-					<div v-if="isCurrentUser()" class="pad">
+					<div v-if="isCurrentUser()" class="2">
 						<router-link
 							class="btn btn-sm btn-outline-secondary action-btn"
 							to="/settings">
@@ -116,14 +116,14 @@ export default {
 		width: 895px;
 	}
 
-	.container{
+	.container2{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		justify-content: center;
 	}
 
-	.pad{
+	.pad2{
 		padding: 1rem;
 	}
 

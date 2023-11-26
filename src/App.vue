@@ -1,19 +1,25 @@
 <template>
   <NavComp />
-	<router-view v-slot="{ Component }">
-		<transition name="fadeUp" mode="out-in">
-			<component :is="Component" :key="$route.path"></component>
-		</transition>
-	</router-view>
+	<div class="pad">
+		<router-view v-slot="{ Component }">
+			<transition name="fadeUp" mode="out-in">
+				<component :is="Component" :key="$route.path"></component>
+			</transition>
+		</router-view>
+	</div>
+
+	<ChatComp></ChatComp>
 </template>
 
 <script>
 import NavComp from './components/NavComp.vue'
+import ChatComp from './components/ChatComp.vue'
 
 export default {
   name: 'App',
   components: {
-    NavComp
+    NavComp,
+	ChatComp
   }
 }
 </script>
@@ -38,4 +44,9 @@ export default {
 		opacity: 0;
 		transform: translateY(30%);
 	}
+
+	.pad{
+		margin-top: 80px;
+	}
+
 </style>

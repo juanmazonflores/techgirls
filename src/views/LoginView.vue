@@ -264,6 +264,12 @@
 		align-items: center;
 	}
 
+	.btn:hover{
+		background-color: var(--color-font);
+		border:none;
+	}
+
+	
 	@media (min-width: 992px) {
 		.home {
 			margin: 4em auto;

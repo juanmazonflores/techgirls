@@ -2,14 +2,14 @@
 	
 	<nav class="navbar d-flex">
 		<div class="container justify-content-evenly">
-			<img alt="mazebook" src="../assets/img/techgirls2.png" class="logo" />
+			<img alt="techgirls" src="../assets/img/techgirls2.png" class="logo" />
 			<div >
 				<form class="d-flex">
 					<input
 					type="text"
 					class="form-control"
-					v-model="busqueda"
-					placeholder="Buscar Usuario" required/>{{ busqueda }}
+					
+					placeholder="Buscar Usuario" required/>
 					<button v-on:click="Search" type="submit" class="search material-icons-round">search</button>
 				</form>
 				
@@ -91,6 +91,9 @@
 	.navbar{
 		background-color: var(--color-nav);
 		z-index: 1;
+		position:fixed;
+		top: 0;
+		width: 100%;
 	}
 
 	.logo{

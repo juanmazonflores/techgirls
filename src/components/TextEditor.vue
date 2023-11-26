@@ -1,47 +1,35 @@
 <template>
-    <Editor
-      :tools="tools"
-      :content-style="{
-        height: '400px',
-      }"
-      :default-content="content"
-    />
-  </template>
-  
-  <script>
-  import { Editor } from "@progress/kendo-vue-editor";
-  import content from "./content";
-  
+  <div class="editor">
+      <div class="card">
+        <h5>Crea un nuevo post</h5>
+        <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+      </div>
+      
+  </div>
+</template>
+
+<script>
+  import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
   export default {
-    components: {
-      Editor,
-    },
-    data() {
-      return {
-        tools: [
-          ["Bold", "Italic", "Underline", "Strikethrough"],
-          ["Subscript", "Superscript"],
-          "ForeColor",
-          "BackColor",
-          ["CleanFormatting"],
-          ["AlignLeft", "AlignCenter", "AlignRight", "AlignJustify"],
-          ["Indent", "Outdent"],
-          ["OrderedList", "UnorderedList"],
-          "FontSize",
-          "FontName",
-          "FormatBlock",
-          ["SelectAll"],
-          ["Undo", "Redo"],
-          ["Link", "Unlink", "InsertImage", "ViewHtml"],
-          ["InsertTable", "InsertFile"],
-          ["Pdf", "Print"],
-          ["AddRowBefore", "AddRowAfter", "AddColumnBefore", "AddColumnAfter"],
-          ["DeleteRow", "DeleteColumn", "DeleteTable"],
-          ["MergeCells", "SplitCell"],
-        ],
-        content: content,
-      };
-    },
-  };
-  </script>
+      name: 'TextEditor',
+      data() {
+          return {
+              editor: ClassicEditor,
+              editorData: '<p></p>',
+              editorConfig: {
+                  // The configuration of the editor.
+              }
+          };
+      }
+  }
+</script>
+<style>
+  h4,h5{
+		color: #FFDFDF;
+		text-decoration:none;
+	}
   
+
+</style>
+
