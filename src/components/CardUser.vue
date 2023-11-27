@@ -35,7 +35,7 @@
 						</router-link>
 					</div>
 
-					<div v-if="isCurrentUser()" class="2">
+					<div v-if="isCurrentUser()" class="pad2">
 						<router-link
 							class="btn btn-sm btn-outline-secondary action-btn"
 							to="/settings">
@@ -74,7 +74,7 @@ const decrement = () => {
 
 export default {
 		name: 'CardUser',
-        props: {'nombre':String, 'bio':String, 'imagen':String,'user':String},
+        props: {'nombre':String, 'bio':String, 'imagen':String,'user':Number},
         data() {
 			return {
 				contador: 0
@@ -82,7 +82,7 @@ export default {
 		},
 		methods:{
 			isCurrentUser() {
-				if (this.user=='teresa') {
+				if (this.user==0) {
 					return true;
 				}
 				return false;

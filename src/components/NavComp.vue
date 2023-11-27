@@ -24,7 +24,7 @@
 
 
 			<router-link
-				to="/profile"
+				to="/profile/0"
 				class="nav-link"
 				:class="{ active: activePath.profile }">
 				<span class="material-icons-round"> face </span>

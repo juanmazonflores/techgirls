@@ -3,14 +3,14 @@
         
         
         <div class="card">
-            <h4>Resultados</h4>
+            <h4>{{ titulo }}</h4>
             <div v-for="user in users" :key="user.txt" class="user d-flex align-items-center gap-2 px-0">
                 <img
                     class="avatar-img"
                     :src="user.picture"
                     alt="Avatar"/>
                 <h4 class="card-header-title ">
-                    <router-link style="text-decoration: none; color: inherit;" to="/profile">
+                    <router-link style="text-decoration: none; color: inherit;"  :to="{ name: 'profile', params: { user: user.user } }">
                         {{ user.name }}
                     </router-link>
                 </h4>
@@ -30,15 +30,18 @@ export default {
 			return {
 				users:[{
                     name:"Teresa Chavez",
-                    picture:"https://randomuser.me/api/portraits/women/95.jpg"
+                    picture:"https://randomuser.me/api/portraits/women/95.jpg",
+                    user:0
                     },
                     {
                     name:"Aurora Alcazar",
-                    picture:"https://randomuser.me/api/portraits/women/85.jpg"
+                    picture:"https://randomuser.me/api/portraits/women/85.jpg",
+                    user:1
                     },
                     {
                     name:"Aida Magana",
-                    picture:"https://randomuser.me/api/portraits/women/80.jpg"
+                    picture:"https://randomuser.me/api/portraits/women/80.jpg",
+                    user:2
                     }
                 ]
                 

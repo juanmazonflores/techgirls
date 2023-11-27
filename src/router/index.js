@@ -13,9 +13,10 @@ const routes = [
 		component: () => import('../views/LoginView.vue'),
 	},
 	{
-		path: '/profile',
+		path: '/profile/:user',
 		name: 'profile',
 		component: () => import('../views/ProfileView.vue'),
+		props: true
 	},
 	{
 		path: '/search',
