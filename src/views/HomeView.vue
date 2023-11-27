@@ -4,8 +4,18 @@
 		<div class="card2">
         <h5>Crea un nuevo post</h5>
         <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+		<button v-on:click="Mostrar" class="btn btn-primary" >Publicar</button>
       </div>
-	
+		
+		<CardComp v-if="publicar"
+			class="mt-2 mx-auto single-spot"
+			picture="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+			:parrafo="editorData"
+			:header="{
+				name: 'Teresa Chavez',
+				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				user:0
+		}"/>
 		<CardComp
 			class="mt-2 mx-auto single-spot"
 			picture="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -13,18 +23,21 @@
 			:header="{
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
+				user:0
 			}"
 			
 			:likes="true" 
 			:comment="{
 				name: 'Aurora Alcazar',
 				picture: 'https://randomuser.me/api/portraits/women/85.jpg',
-				text:'Hola Teresa, mi nombre es Aurora'
+				text:'Hola Teresa, mi nombre es Aurora',
+				user:1
 			}"
 			:answer="{
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
-				text:'Hola, te dare follow'
+				text:'Hola, te dare follow',
+				user:0
 			}"/>
 			
 		<CardComp
@@ -34,17 +47,20 @@
 			:header="{
 				name: 'Expansion.mx',
 				picture: 'https://www.eleconomista.com.mx/__public/ac558515aae5b22f/images/social/logo_organization.png',
+				user:0
 			}"
 			:likes="true" 
 			:comment="{
 				name: 'Aida Magana',
 				picture: 'https://randomuser.me/api/portraits/women/80.jpg',
-				text:'Excelente'
+				text:'Excelente',
+				user:2
 			}"
 			:answer="{
 				name: 'Teresa Chavez',
 				picture: 'https://randomuser.me/api/portraits/women/95.jpg',
-				text:'Opino lo mismo'
+				text:'Opino lo mismo',
+				user:0
 			}"/>
 		<CardComp
 			class="mt-2 mx-auto single-spot"
@@ -53,17 +69,20 @@
 			:header="{
 				name: 'El imparcial',
 				picture: 'https://www.elimparcial.com/__export/1557412405886/sites/elimparcial/arte/apps/precomposed_20190509.png_285119621.png',
+				user:0
 			}"
 			:likes="true" 
 			:comment="{
 				name: 'Aurora Alcazar',
 				picture: 'https://randomuser.me/api/portraits/women/85.jpg',
-				text:'Espero que funcione este plan'
+				text:'Espero que funcione este plan',
+				user:1
 			}"
 			:answer="{
 				name: 'Aida Magana',
 				picture: 'https://randomuser.me/api/portraits/women/80.jpg',
-				text:'x2'
+				text:'x2',
+				user:2
 			}"/>
 	</div>
 </template>
@@ -77,13 +96,23 @@
 		},
 		data() {
           return {
-              editor: ClassicEditor,
-              editorData: '<p></p>',
-              editorConfig: {
-                  // The configuration of the editor.
-              }
-          };
-      }
+				editor: ClassicEditor,
+				editorData: null,
+				editorConfig: {
+					// The configuration of the editor.
+					},
+				publicar:false
+           };
+		},
+		methods:{
+			Mostrar: function(){
+				if (this.publicar) {
+					this.publicar = false;
+				} else {
+					this.publicar = true;
+				}
+			},
+		}
 	}
 </script>
 <style scoped>
@@ -116,5 +145,17 @@
 	}
 	.pad{
 		margin-top: 100px;
+	}
+
+	.btn-primary{
+		margin-top: 1rem;
+		background-color: var(--color-font);
+		border: none;
+	}
+	.btn-primary:hover{
+		margin-top: 1rem;
+		background-color: var(--color-nav);
+		border: none;
+		color:black
 	}
 </style>

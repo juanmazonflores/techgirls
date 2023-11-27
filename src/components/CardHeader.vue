@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-8 col-sm-9">
 				
-					<router-link style="text-decoration: none; color: inherit;" to="/profile">
+					<router-link style="text-decoration: none; color: inherit;" :to="{ name: 'profile', params: { user: header.user } }">
 						<h4 class="card-header-title m-0 titulo">{{ header.name }}</h4>		
 					</router-link>
 				

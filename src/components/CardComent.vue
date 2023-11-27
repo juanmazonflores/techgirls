@@ -7,7 +7,7 @@
                     :src="comment.picture"
                     alt="Avatar"/>
                 <h4 class="card-header-title ">
-                    <router-link style="text-decoration: none; color: inherit;" to="/profile">
+                    <router-link style="text-decoration: none; color: inherit;" :to="{ name: 'profile', params: { user: comment.user } }">
                         {{ comment.name }}
                     </router-link>
                 </h4>
