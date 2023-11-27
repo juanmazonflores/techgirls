@@ -14,9 +14,19 @@
                 </select>
             </div>
             <div class="user d-flex align-items-center gap-2 px-0">
-                <label for="checbox">Permitir que me agreguen </label>
-                <input id="checkbox" type="checkbox">
+                <input id="checkbox" type="checkbox"><label for="checbox">Permitir que me agreguen </label>
             </div>
+            <div class="user d-flex align-items-center gap-2 px-0">
+                <label>
+                <input type="checkbox" v-model="recibirNotificaciones"> Recibir notificaciones
+                </label>
+            </div>
+            <div class="user d-flex align-items-center gap-2 px-0">
+                <label>
+                <input type="checkbox" v-model="perfilVisible"> Hacer mi perfil visible para otros usuarios
+                </label>
+            </div>
+
             <button @click="guardar" class="btn btn-primary">Guardar cambios</button>
         </div>
        
@@ -39,7 +49,9 @@ export default {
                     {
                     name:"Quien puede ver mi informacion personal",
                     }
-                ]
+                ],
+                recibirNotificaciones: false,
+                perfilVisible: false,
                 
 			}
 		},
@@ -101,10 +113,10 @@ export default {
         font-size: larger;
     }
     select{
-        background-color: var(--color-container);
+        background-color: #ffffffab;
+        border: 1px solid var(--color-font);
         color: var(--color-font);
         font-size: larger;
-        border-color: var(--color-font);
     }
     .btn-primary{
 		background-color: #860A35;

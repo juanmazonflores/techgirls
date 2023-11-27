@@ -31,6 +31,13 @@
 			</router-link>
 
 			<router-link
+				to="/chat"
+				class="nav-link"
+				:class="{ active: activePath.chat }">
+				<span class="material-icons-round"> chat </span>
+			</router-link>
+
+			<router-link
 				to="/login"
 				class="nav-link"
 				:class="{ active: activePath.login }">
@@ -60,18 +67,28 @@
 					return {
 						home: true,
 						profile: false,
+						chat: false,
 						login: false
 					}
 				} else if (this.$route.path === '/profile') {
 					return {
 						home: false,
 						profile: true,
+						chat: false,
 						login: false
 					}
-				}  else if (this.$route.path === '/login') {
+				}  else if (this.$route.path === '/chat') {
 					return {
 						home: false,
 						profile: false,
+						chat: true,
+						login: false
+					}
+				} else if (this.$route.path === '/login') {
+					return {
+						home: false,
+						profile: false,
+						chat: false,
 						login: true
 					}
 				}
@@ -79,6 +96,7 @@
 					return {
 						home: false,
 						profile: false,
+						chat: false,
 						login: false
 					}
 				}

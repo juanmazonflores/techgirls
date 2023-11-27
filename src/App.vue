@@ -8,18 +8,15 @@
 		</router-view>
 	</div>
 
-	<ChatComp></ChatComp>
 </template>
 
 <script>
 import NavComp from './components/NavComp.vue'
-import ChatComp from './components/ChatComp.vue'
 
 export default {
   name: 'App',
   components: {
-    NavComp,
-	ChatComp
+    NavComp
   }
 }
 </script>
