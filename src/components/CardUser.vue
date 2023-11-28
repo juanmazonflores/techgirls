@@ -5,8 +5,22 @@
 			<div class="row">
 			<div class="col-xs-12 col-md-10 offset-md-1">
 				<img :src="imagen" class="user-img" />
-				<h4>{{ nombre }}</h4>
-				<p>{{ bio }}</p>
+
+				<div class="col-xs-12">
+					<h4 v-if="!editar">{{ nombre2 }}</h4>
+					<div class="espacio" v-else>
+						<label for="">Nombre: </label>
+						<input v-model="nombre3"  id="nombre" type="text">
+					</div>
+					
+					<p v-if="!editar">{{ bio2 }}</p>
+					<div class="espacio" v-else>
+						<label for="">Biografia: </label>
+						<input v-model="bio3"  id="bio" type="text">
+					</div>
+					
+				</div>
+				
 
 
 				<div class="container2">
@@ -36,11 +50,16 @@
 					</div>
 
 					<div v-if="isCurrentUser()" class="pad2">
-						<router-link
+						<div v-if="!editar"
 							class="btn btn-sm btn-outline-secondary action-btn"
-							to="/settings">
+							@click="edit()">
 							<i class="ion-gear-a"></i> Editar Perfil
-						</router-link>
+						</div>
+						<div v-else
+							class="btn btn-sm btn-outline-secondary action-btn pad2"
+							@click="edit()">
+							<i class="ion-gear-a"></i> Guardar
+						</div>
 					</div>
 
 				</div>
@@ -77,7 +96,10 @@ export default {
         props: {'nombre':String, 'bio':String, 'imagen':String,'user':Number},
         data() {
 			return {
-				contador: 0
+				contador: 0,
+				editar:false,
+				nombre2: this.nombre,
+				bio2:this.bio,
 			}
 		},
 		methods:{
@@ -94,7 +116,27 @@ export default {
             decrement () {
                 this.contador--;
                 this.follow=false
-            }
+            },
+			edit(){
+				if (this.editar) {
+					this.editar=false
+					if(this.nombre3==''){
+						this.nombre2=this.nombre;
+					}
+					else{
+						this.nombre2=this.nombre3;	
+					}
+					if (this.bio3=='') {
+						this.bio2=this.bio;
+					} else {
+						this.bio2=this.bio3;
+					}
+						
+				} else {
+					this.editar=true
+				}
+				
+			}
 
 		}
 	}
@@ -127,7 +169,9 @@ export default {
 		padding: 1rem;
 	}
 
-
+	.espacio{
+		margin-bottom: 1rem;
+	}
 
 	.profile {
 
@@ -155,6 +199,11 @@ export default {
 		color: var(--color-font);
 		text-decoration:none;
 	}
+	input{
+		border-color:var(--color-font);
+		margin-left:1rem
+	}
+
 
 </style>
 
