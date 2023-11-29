@@ -19,9 +19,10 @@ const routes = [
 		props: true
 	},
 	{
-		path: '/search',
+		path: '/search/:texto',
 		name: 'search',
 		component: () => import('../views/SearchView.vue'),
+		props:true
 	},
 	{
 		path: '/friends',

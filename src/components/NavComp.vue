@@ -3,16 +3,16 @@
 	<nav class="navbar d-flex">
 		<div class="container justify-content-evenly">
 			<img alt="techgirls" src="../assets/img/techgirls2.png" class="logo" />
-			<div >
-				<form class="d-flex">
+			<div class="d-flex">
+			
 					<input
 					type="text"
 					class="form-control"
-					
+					v-model="busqueda"
 					placeholder="Buscar Usuario" required/>
-					<button v-on:click="Search" type="submit" class="search material-icons-round">search</button>
-				</form>
-				
+					<button @click="Search" class="search material-icons-round"  >search</button>
+                    
+					
 			</div>
 			<router-link
 				to="/"
@@ -50,12 +50,19 @@
 <script>
 	export default {
 		name: 'NavComp',
+		data(){
+			return{
+				busqueda:null,
+				
+			}
+		},
 		methods: {
 			checkActive() {
 				console.log(this.$route.path)
 			},
 			Search(){
-				this.$router.push('/search')
+				this.$router.push({name: 'search', params: { texto: this.busqueda }})
+				console.log(this.busqueda)
 			}
 		},
 		created() {
