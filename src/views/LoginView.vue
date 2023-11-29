@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<card-comp :btns="btnArray" class="mx-auto card-comp">
+				<card-comp v-if="!mostrar && !mostrar2" :btns="btnArray" class="mx-auto card-comp">
 	
 						<h4>Iniciar Sesion</h4>
 						<form>
@@ -87,7 +87,7 @@
 				
 
 				</card-comp>
-				<div  class="">
+				<div >
 					<form v-if="mostrar2" @submit="Recuperar">
 					<div class="mb-3 mt-2">
 						<input

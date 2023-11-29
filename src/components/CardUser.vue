@@ -119,14 +119,17 @@ export default {
             },
 			edit(){
 				if (this.editar) {
+					console.log(this.editar)
 					this.editar=false
-					if(this.nombre3==''){
+					console.log(this.nombre3)
+					if(typeof this.nombre3==='undefined'){
+						
 						this.nombre2=this.nombre;
 					}
 					else{
 						this.nombre2=this.nombre3;	
 					}
-					if (this.bio3=='') {
+					if (typeof this.bio3==='undefined') {
 						this.bio2=this.bio;
 					} else {
 						this.bio2=this.bio3;

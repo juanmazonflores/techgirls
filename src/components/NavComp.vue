@@ -61,8 +61,11 @@
 				console.log(this.$route.path)
 			},
 			Search(){
-				this.$router.push({name: 'search', params: { texto: this.busqueda }})
-				console.log(this.busqueda)
+				if(!this.busqueda==''){
+					this.$router.push({name: 'search', params: { texto: this.busqueda }})
+					console.log(this.busqueda)
+				}
+				
 			}
 		},
 		created() {
@@ -77,7 +80,7 @@
 						chat: false,
 						login: false
 					}
-				} else if (this.$route.path === '/profile') {
+				} else if (this.$route.path === '/profile/0') {
 					return {
 						home: false,
 						profile: true,
